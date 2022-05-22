@@ -71,8 +71,9 @@
   .navbar1.responsive {
       position: relative;
   }
-  .navbar1.responsive div{
+  .navbar1.responsive a{
     float: none;
+    width : 100%;
     display: block;
     text-align: left;
   }
@@ -88,13 +89,15 @@
             <a href="#" class="anchortag3" id="nav"> Signin </a>
             <a href="#" class="anchortag4" id="nav"> Signup </a>
         </div>
-        <a href="#" class="icon"> <i class="fa-solid fa-bars" ></i> </a>
+        <a href="#" class="icon"><i class="fa-solid fa-bars" ></i> </a>
         
         <script>
             let icon = document.querySelector(".icon")
-            icon.onclick = showNav()
+            icon.onclick = showNav
             function showNav(e){
+               
                 var navbar = document.querySelector(".navbar1")
+                console.log(navbar)
                 navbar.classList.toggle("responsive")
             }
         </script>
