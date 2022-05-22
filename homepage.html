@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54d749bc7a.js" crossorigin="anonymous"></script>
+    <title>www.InV.com/home page</title>
+</head>
+<body>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: verdana;
+        }
+        .navbar1{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            box-shadow: 0px 0px 12px 1px grey;
+            border-radius: 20px;
+            
+        }
+        .div2 > a{
+            margin: 50px;
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+            transition: 0.5s;
+            
+        }
+        .div2 > a:hover{
+            color: blue;
+            font-size: large;
+        }
+        .div1{
+            font-size: x-large;
+            font-weight: bolder;
+            margin: 30px;
+            margin-left: 40px;
+            color: blue;
+        }
+        .div2{
+            margin-top: 35px;
+        }
+        main{
+            margin-top: 20px;
+            transition: 0.8s;
+        }
+        
+.navbar1 .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar1 a {
+      display: none;
+    }
+  .navbar1 a.icon {
+      margin-right: 20px;
+      margin-top: 30px;
+      display: block;
+      text-decoration: none;
+      color: black;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .navbar1.responsive {
+      position: relative;
+  }
+  .navbar1.responsive div{
+    float: none;
+    display: block;
+    text-align: left;
+  }
+ 
+}
+     
+    </style>
+    <nav class="navbar1">
+        <div class="div1">  InV. Investment View </div>
+        <div class="div2"> 
+            <a href="#" class="anchortag1" id="nav"> Contact </a>
+            <a href="#" class="anchortag2" id="nav"> Support</a>
+            <a href="#" class="anchortag3" id="nav"> Signin </a>
+            <a href="#" class="anchortag4" id="nav"> Signup </a>
+        </div>
+        <a href="#" class="icon"> <i class="fa-solid fa-bars" ></i> </a>
+        
+        <script>
+            let icon = document.querySelector(".icon")
+            icon.onclick = showNav()
+            function showNav(e){
+                var navbar = document.querySelector(".navbar1")
+                navbar.classList.toggle("responsive")
+            }
+        </script>
+        
+    </nav>
+    <style>
+        .main1{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            transition: 1s;
+            
+        }
+        .main1:hover{
+            box-shadow: 0px 0px 12px 1px grey;
+        }
+        .div3{
+            height:400px ;
+            width: 30%;
+            display: flex;  
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center; 
+                       
+            
+           
+        
+        }
+      
+     
+        .art1{
+            text-align: center;
+            font-size: XX-large;
+           
+            
+            
+            
+        }
+         .button1{
+             margin-top: 20px; 
+            border: none;
+            background-color: blue;
+            height: 50px;
+            width: 50%;
+            font-weight: bolder;
+            font-size: large;
+            border-radius: 20px;  
+            
+        }
+        .button1:hover{
+            opacity: 0.5;
+        } 
+        .button1 > a{
+            text-decoration: none;
+            color: white;
+        }
+        .div4{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+          
+
+        }
+        
+        #img1{
+            display: block;
+            max-width: fit-content;
+            object-fit: cover;
+            max-height: 400px;
+        }
+    </style>
+    <main class="main1">
+        <div class="div3"> <article class="art1"> Welcome to InV. Here we help make the best investment decisions with our top level software.   </article> 
+        <button class="button1"> <a href="#"> Get Started </a></button>
+        </div>
+        <div class="div4"><img src="./resized-image-Promo (1).jpeg" id="img1"> </div>
+    </main>
+    <style>
+        .main2{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            transition: 1s;
+        }
+        .main2:hover{
+            box-shadow: 0px 0px 12px 1px grey;
+        }
+        .div6{
+            height:593px ;
+            width: 42%;
+            display: flex;  
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center; 
+           
+            
+        }
+       
+         .art2{
+            text-align: center;
+            font-size: xx-large;
+            
+          
+        } 
+        .button2{
+            margin-top: 20px;
+          
+            border: none;
+            background-color: blue;
+            height: 50px;
+            width: 30%;
+            font-weight: bolder;
+            font-size: large;
+            border-radius: 20px;   
+        }
+        .button2:hover{
+            opacity: 0.5;
+        }
+        .button2 > a{
+            text-decoration: none;
+            color: white;
+        }
+        .img2{
+            display: block;
+            max-width: fit-content;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        .div5{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+          
+        }
+
+    </style>
+    <main class="main2">
+        <div class="div5"> <img src="./javascript.jpeg" class="img2" ></div>
+        <div class="div6"> <article class="art2">The programming language used in processing the information provided is JavaScript.  </article>
+        <button class="button2"> <a href="#"> Learn More </a></button>
+        </div>
+    </main>
+    <style>
+         .main3{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            transition: 1s;
+        }
+        .main3:hover{
+            box-shadow: 0px 0px 12px 1px grey;
+        }
+         .div7{
+            width: 50%;
+            display: flex;  
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center; 
+            
+            
+        } 
+       
+      
+         
+        .button3 > a{
+            text-decoration: none;
+            color: white;
+        }
+        .button3{
+            background-color: blue;
+            height: 50px;
+            font-weight: bolder;
+            font-size: large;
+            border-radius: 20px; 
+            border: 0px;
+            width: 30%;
+            margin-top:20px ;
+           
+        }
+        .button3:hover{
+            opacity: 0.5;
+        }
+        .img3{
+            display: block;
+            max-width: fit-content;
+            object-fit: cover;
+            max-height: 500px;
+        }
+        .div8{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+          
+        }
+    </style>
+    <main class="main3"> 
+        <div class="div7">
+            <article class="art2"> Our software makes use of the Greedy Approach Algorithm in selecting the best business investments, throught picking from the ones with the highest returns in revenue. </article>
+            <button class="button3"> <a href=""> Learn More</a></button>
+        </div>
+        <div class="div8">
+            <img src="./algorithm.jpeg" class="img3">
+        </div>
+    </main>
+    <style>
+        .aside1{
+            margin-top: 50px;
+        }
+        .aside1 > div{
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+            
+        }
+        img{
+            margin: 10px;
+        }
+        .aside1 > div > .p1{
+            margin-left: 35px;
+            font-size: large;
+            font-weight: bolder;
+        }
+         .p2{
+            font-size: large;
+            font-weight: bolder;
+            margin-left: 10px;
+            color: blue;
+
+        }
+    </style>
+    <aside class="aside1"> 
+        <div> 
+            <p class="p1"> Follow <p class="p2"> InV.</p></p>
+            
+            <a href="#"> <img src="//www.microsoft.com/onerfstatics/marketingsites-neu-prod/_h/85288795/coreui.statics/images/social/facebook.png" alt="Facebook"> </a>
+            <a href="#"> <img src="//www.microsoft.com/onerfstatics/marketingsites-neu-prod/_h/93690392/coreui.statics/images/social/twitter.png" alt="Twitter"></a>
+            <a href="#"> <img src="//www.microsoft.com/onerfstatics/marketingsites-neu-prod/_h/b23f9ba2/coreui.statics/images/social/linkedin.png" alt="LinkedIn"> </a>
+        </div>
+    </aside>
+    
+</body>
+</html>

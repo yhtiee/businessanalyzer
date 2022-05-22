@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/54d749bc7a.js" crossorigin="anonymous"></script>
+    <link rel = "stylesheet" href="analyzerpage.css"/>
+    
+</head>
+<body>
+
+    
+   
+     <nav class="navbar1">
+        <div class="divnavbar1">  InV.Investment View </div>
+        <div class="divnavbar2"> 
+            <a href="#" class="anchortag1"> Contact </a>
+            <a href="#" class="anchortag2"> Support</a>
+            <a href="#"><i class="fa-solid fa-user"></i>  </a>     
+        </div>
+    </nav>
+    <div class="div1">  Available Capital  : <input type="number" id="avacap" pattern="0-9"></div> 
+    <main class="main1">
+        <div class="div2">
+            <form> 
+                <div class="div3">
+                   Business Name : <input type="text" id='name'required minlength="5">
+                </div>
+                <div class="div4"> 
+                   Cost of Business : <input type="number" id="cost">
+                </div>
+                <div class="div5">
+                    Revenue of Business : <input type="number" id='revenue'>
+                </div>
+                <div class="div8"> <button class="button1"> Submit Business</button> </div>
+                <script>
+                    let businesses = {}
+                    let investments = [];
+                    let form = document.querySelector("form")
+                    form.onsubmit = submitForm
+                    function submitForm(e){
+                        e.preventDefault()
+
+                        let name = document.querySelector("#name").value
+                        let revenue = parseFloat(document.querySelector("#revenue").value)
+                        let invest = parseFloat(document.querySelector("#cost").value)
+                        businesses[name] = {
+                           name,  revenue, invest
+                        }
+
+                      
+                       investments = objToArr(businesses)
+
+                       return renderData()
+                        
+                    }
+                    function renderData(){
+                        let table = document.querySelector("tbody")
+                        table.innerHTML = ''
+                        investments.forEach(investment => {
+                            tablerow = document.createElement("tr")
+                            tablerow.innerHTML = `
+                                <td>${investment.name}</td>
+                                <td>${investment.invest}</td>
+                                <td>${investment.revenue}</td>
+                            `
+                            table.append(tablerow)
+                        })
+                    }
+                    function objToArr(obj){
+                        let data = []
+                        for (let biz in businesses){
+                            let val = businesses[biz]
+                            data.push(val)
+
+                        }
+                        return data
+                    }
+                </script>
+            </form>
+        </div>
+        <div class="div7">
+            
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>    Business Name</th>
+                        <th>Cost of Business</th>
+                        <th> Revenue of Business</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+            
+            <div class="div8"> 
+                <button class="button2" onclick="makeBestdecison()"> Analyze </button> 
+                <script>
+                    
+                    function makeBestdecison(investments = objToArr(businesses), capital=parseFloat(document.querySelector("#avacap").value)){
+                        const invested = []
+                        function findCurrentbest(){
+                            let currBest = null
+                            let bestWorth = 0
+                            investments.forEach(inv => {
+                                let invWorth = inv.revenue - inv.invest
+                                if(invWorth > bestWorth && inv.invest <= capital && !invested.includes(inv)){
+                                    currBest = inv
+                                    bestWorth = invWorth
+                                }
+                            })
+                            return currBest
+                        }     
+
+                        let currBest = findCurrentbest()
+                        while (currBest !== null){
+                             
+                            invested.push(currBest)
+                            capital -= currBest.invest
+                            currBest=findCurrentbest()
+                        }   
+                        let totalCostinv = invested.map(inv => inv.invest).reduce((prev, curr) => prev + curr) 
+                        let totalrevenue = invested.map(inv => inv.revenue ).reduce((prev, curr) => prev + curr)
+                        let totaProfit = totalrevenue - totalCostinv 
+                        let result = {suggested : invested, totalCostinv, amtLeftafterInvestment : capital, totalrevenue, totaProfit}
+                        console.log(result)
+
+                        function renderData2(){
+                        let suggest = result.suggested
+                        let main = document.querySelector(".main2")
+                        main.innerHTML = ''
+
+                        suggest.forEach(sugg => {
+                            div = document.createElement("div")
+                            div.className = 'res'
+                            div.innerHTML = `<div> <p>Business Name : ${sugg.name}</p> 
+                                                   <p>Business Cost : ${sugg.invest}</p> 
+                                                   <p>Business Revenue : ${sugg.revenue}</p> </div>`
+                         main.append(div)
+                        })
+                        let main2 = document.querySelector(".main3")
+                        main2.innerHTML = ''
+                        div2 = document.createElement("div")
+                        div2.className = "res2"
+                        div2.innerHTML = `<div> <p> Number of Buisness Selected : ${suggest.length}</p>
+                             <p> Total Cost of Investment : ${result.totalCostinv}</p>
+                            <p> Remaining Capital : ${result.amtLeftafterInvestment}</p>
+                            <p> Total Revenue : ${result.totalrevenue}</p>
+                            <p> Total Profit : ${result.totaProfit}</p>
+                            </div>`
+                        main2.append(div2)
+
+                    }
+                    renderData2()
+                     showmodal();
+                        
+                    }
+                   
+                </script>
+            </div>
+        </div>
+    </main>
+   
+    <main class="modal" >
+        
+        <div class="modal-body">
+            <div class="modal-child">
+                    <main class="main2">
+                    </main>
+                <main class="main3"> 
+                </main>
+            </div>
+            <div class="button-modal"> 
+                <button id="cancelmodal" onclick="removemodal()">Cancel</button> 
+            </div>
+        </div>
+        
+        
+        
+    </main>
+    <script>
+        function removemodal(){
+            let modalclass= document.querySelector(".modal")
+            modalclass.classList.remove("showModal")
+        }
+
+    
+        function showmodal(e){
+            let modal = document.querySelector('.modal')
+            modal.classList.add('showModal')
+
+        }
+    </script>
+    
+        
+    
+    
+</body>
+</html>

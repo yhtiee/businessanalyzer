@@ -1,0 +1,296 @@
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.div2{
+    /* margin-top: 5px; */
+    box-shadow: 0px 0px 12px 1px gray;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    border-radius: 20px;
+    width: 40%;
+}
+.div7{
+    box-shadow: 0px 0px 12px 1px gray;
+    width: 50%;
+    /* margin-top:20px ; */
+    border-radius: 20px;
+}
+form {
+    margin-top: 20px;
+    
+}
+.div3{
+    font-weight: bolder;
+    margin: 20px;
+}
+.div4{
+    font-weight: bolder;
+    margin: 20px;
+}
+.div5{
+    font-weight: bolder;
+    margin: 20px;
+    
+}
+/* .div3 input{
+    width: 70%;
+    
+}
+.div4 input{
+    width: 70%;
+}
+.div5 input{
+    width: 30%;
+} */
+form input{
+    height: 30px;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #F1F1F1;
+
+}
+
+.div8{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.button1{
+    margin-top: 10px;
+    height: 50px;
+    background-color: blue;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 20px; 
+    border: 0px;
+    color: white;
+    width: 60%;
+    margin-right: 35px;
+    
+}
+.button1:hover{
+    opacity: 0.5;
+}
+.art1{
+    text-align: center;
+}
+.div1{
+    margin-top: 10px;
+    font-weight: bolder;
+}
+.div1 input{
+    height: 30px;
+    outline: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #F1F1F1;
+}
+input:hover{
+    background-color: white;
+    box-shadow: 0px 0px 5px 1px blue;
+}
+.navbar1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0px 0px 12px 1px gray;
+    border-radius: 20px;
+    
+}
+.divnavbar2 > a{
+    margin: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    
+}
+.divnavbar2 > a:hover{
+    color: blue;
+    font-size: large;
+}
+.divnavbar1{
+    font-size: x-large;
+    font-weight: bolder;
+    margin: 30px;
+    margin-left: 40px;
+    color: blue;
+}
+.divnavbar2{
+    margin-top: 35px;
+}
+.div1{
+    margin-left: 20px;
+    
+}
+.div1{
+    font-weight: bolder;
+}
+.div6{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-content: center;
+    justify-content: center;
+}
+.button2{
+    height: 50px;
+    background-color: blue;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 20px; 
+    border: 0px;
+    color: white;
+    width: 30%;
+    margin-top:20px;
+    
+}
+.button2:hover{
+    opacity: 0.5;
+}
+.div6 div{
+    border: 1px solid black;
+    
+}
+.div9{
+    width: 40%;
+}
+.div10{
+    width: 25%;
+}
+.div11{
+    width: 30%;
+}
+.art2{
+    text-align: center;
+}
+
+
+.main3{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 50%;
+    box-shadow: 0px 0px 12px 1px gray;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 10px;
+
+   
+   
+
+}
+
+
+table {
+    margin : auto;
+    text-align : center;
+    border : 1px solid white;
+    border-collapse: collapse;
+    width: 95%;
+    margin-top: 10px;                   
+}
+tr:nth-of-type(2n){
+
+    background-color:aliceblue;
+}
+th, td{
+    /* border : 1px solid white; */
+    border-radius : 20px;
+    padding : 10px;
+    }
+                
+.modal{
+    background-color: rgba(0, 0, 0, 0.9);
+    position : fixed;
+    top : 0px;
+    height : 100vh;
+    min-width : 100vw;
+    pointer-events: none;
+    opacity : 0;
+}
+.showModal {
+    pointer-events: all;
+    opacity : 1;
+    display : flex;
+    justify-content: center;
+    align-items: center; 
+}
+.modal-body{
+    background-color: white;
+    width: 70%;
+    border-radius: 20px;
+   
+    
+    
+   
+}
+.modal-child{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    
+    
+}
+.button-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+#cancelmodal{
+    height: 50px;
+    background-color: blue;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 20px; 
+    border: 0px;
+    color: white;
+    width: 20%;
+    margin-top:20px;
+    border: none;
+    margin-bottom: 30px;
+
+}
+#cancelmodal:hover{
+    opacity: 0.5;
+}
+.main2{
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 50%;
+    box-shadow: 0px 0px 12px 1px gray;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-top: 10px;
+
+}
+.res{
+    border-bottom: 1px solid black;
+}
+.navmodal{
+    position: fixed;
+}
+
+
+            
+
+
